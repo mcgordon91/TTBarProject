@@ -1,0 +1,192 @@
+digraph {
+	1 [label="Report", style="filled", fillcolor="#9cbbe5", shape="box"];
+	0 [label="Events", style="filled", fillcolor="#e8f8fc", shape="oval"];
+	2 [label="FillPar", style="filled", fillcolor="#9cbbe5", shape="box"];
+	113 [label="No Vetoed Muons", style="filled", fillcolor="#c4cfd4", shape="diamond"];
+	110 [label="At Leat One B-Tagged Jet", style="filled", fillcolor="#c4cfd4", shape="diamond"];
+	111 [label="Define
+DeepJetB", style="filled", fillcolor="#60aef3", shape="oval"];
+	112 [label="Define
+Num_Muons", style="filled", fillcolor="#60aef3", shape="oval"];
+	82 [label="At Least Two Jets", style="filled", fillcolor="#c4cfd4", shape="diamond"];
+	83 [label="Define
+Ht", style="filled", fillcolor="#60aef3", shape="oval"];
+	84 [label="Define
+MTofMETandMu", style="filled", fillcolor="#60aef3", shape="oval"];
+	85 [label="Define
+MediumBJetMask", style="filled", fillcolor="#60aef3", shape="oval"];
+	86 [label="Define
+Num_BTaggedJets", style="filled", fillcolor="#60aef3", shape="oval"];
+	87 [label="Define
+Num_Jets", style="filled", fillcolor="#60aef3", shape="oval"];
+	88 [label="Define
+SJet1_eta", style="filled", fillcolor="#60aef3", shape="oval"];
+	89 [label="Define
+SJet1_phi", style="filled", fillcolor="#60aef3", shape="oval"];
+	90 [label="Define
+SJet1_pt", style="filled", fillcolor="#60aef3", shape="oval"];
+	91 [label="Define
+SJet2_eta", style="filled", fillcolor="#60aef3", shape="oval"];
+	92 [label="Define
+SJet2_phi", style="filled", fillcolor="#60aef3", shape="oval"];
+	93 [label="Define
+SJet2_pt", style="filled", fillcolor="#60aef3", shape="oval"];
+	94 [label="Define
+SJet_btagDeepFlavB", style="filled", fillcolor="#60aef3", shape="oval"];
+	95 [label="Define
+SMuon_eta", style="filled", fillcolor="#60aef3", shape="oval"];
+	96 [label="Define
+SMuon_mass", style="filled", fillcolor="#60aef3", shape="oval"];
+	97 [label="Define
+SMuon_pfRelIso03_all", style="filled", fillcolor="#60aef3", shape="oval"];
+	98 [label="Define
+SMuon_pfRelIso03_chg", style="filled", fillcolor="#60aef3", shape="oval"];
+	99 [label="Define
+SMuon_pfRelIso04_all", style="filled", fillcolor="#60aef3", shape="oval"];
+	100 [label="Define
+SMuon_phi", style="filled", fillcolor="#60aef3", shape="oval"];
+	101 [label="Define
+SMuon_pt", style="filled", fillcolor="#60aef3", shape="oval"];
+	102 [label="Define
+VetoMuon_eta", style="filled", fillcolor="#60aef3", shape="oval"];
+	103 [label="Define
+VetoMuon_mass", style="filled", fillcolor="#60aef3", shape="oval"];
+	104 [label="Define
+VetoMuon_pfRelIso03_all", style="filled", fillcolor="#60aef3", shape="oval"];
+	105 [label="Define
+VetoMuon_pfRelIso03_chg", style="filled", fillcolor="#60aef3", shape="oval"];
+	106 [label="Define
+VetoMuon_pfRelIso04_all", style="filled", fillcolor="#60aef3", shape="oval"];
+	107 [label="Define
+VetoMuon_phi", style="filled", fillcolor="#60aef3", shape="oval"];
+	108 [label="Define
+VetoMuon_pt", style="filled", fillcolor="#60aef3", shape="oval"];
+	109 [label="Define
+jet_mask", style="filled", fillcolor="#60aef3", shape="oval"];
+	78 [label="At Least One Muon", style="filled", fillcolor="#c4cfd4", shape="diamond"];
+	79 [label="Define
+LumiXS", style="filled", fillcolor="#60aef3", shape="oval"];
+	80 [label="Define
+mu_mask", style="filled", fillcolor="#60aef3", shape="oval"];
+	81 [label="Define
+mu_veto", style="filled", fillcolor="#60aef3", shape="oval"];
+	77 [label="HLTTriggerSingleMuonTrigger", style="filled", fillcolor="#c4cfd4", shape="diamond"];
+	0 [label="Events", style="filled", fillcolor="#e8f8fc", shape="oval"];
+	3 [label="FillPar", style="filled", fillcolor="#9cbbe5", shape="box"];
+	4 [label="FillPar", style="filled", fillcolor="#9cbbe5", shape="box"];
+	5 [label="FillPar", style="filled", fillcolor="#9cbbe5", shape="box"];
+	6 [label="FillPar", style="filled", fillcolor="#9cbbe5", shape="box"];
+	7 [label="FillPar", style="filled", fillcolor="#9cbbe5", shape="box"];
+	8 [label="FillPar", style="filled", fillcolor="#9cbbe5", shape="box"];
+	9 [label="FillPar", style="filled", fillcolor="#9cbbe5", shape="box"];
+	10 [label="FillPar", style="filled", fillcolor="#9cbbe5", shape="box"];
+	11 [label="FillPar", style="filled", fillcolor="#9cbbe5", shape="box"];
+	12 [label="FillPar", style="filled", fillcolor="#9cbbe5", shape="box"];
+	13 [label="FillPar", style="filled", fillcolor="#9cbbe5", shape="box"];
+	14 [label="FillPar", style="filled", fillcolor="#9cbbe5", shape="box"];
+	15 [label="FillPar", style="filled", fillcolor="#9cbbe5", shape="box"];
+	16 [label="FillPar", style="filled", fillcolor="#9cbbe5", shape="box"];
+	17 [label="FillPar", style="filled", fillcolor="#9cbbe5", shape="box"];
+	18 [label="FillPar", style="filled", fillcolor="#9cbbe5", shape="box"];
+	19 [label="FillPar", style="filled", fillcolor="#9cbbe5", shape="box"];
+	20 [label="FillPar", style="filled", fillcolor="#9cbbe5", shape="box"];
+	132 [label="Exactly One Vetoed Muon", style="filled", fillcolor="#c4cfd4", shape="diamond"];
+	21 [label="FillPar", style="filled", fillcolor="#9cbbe5", shape="box"];
+	22 [label="FillPar", style="filled", fillcolor="#9cbbe5", shape="box"];
+	23 [label="FillPar", style="filled", fillcolor="#9cbbe5", shape="box"];
+	24 [label="FillPar", style="filled", fillcolor="#9cbbe5", shape="box"];
+	25 [label="FillPar", style="filled", fillcolor="#9cbbe5", shape="box"];
+	143 [label="Define
+SMuon_eta", style="filled", fillcolor="#60aef3", shape="oval"];
+	144 [label="Define
+SMuon_mass", style="filled", fillcolor="#60aef3", shape="oval"];
+	145 [label="Define
+SMuon_phi", style="filled", fillcolor="#60aef3", shape="oval"];
+	146 [label="Define
+SMuon_pt", style="filled", fillcolor="#60aef3", shape="oval"];
+	139 [label="At Least One Good Muon", style="filled", fillcolor="#c4cfd4", shape="diamond"];
+	140 [label="Define
+LumiXS", style="filled", fillcolor="#60aef3", shape="oval"];
+	141 [label="Define
+jet_mask_old", style="filled", fillcolor="#60aef3", shape="oval"];
+	142 [label="Define
+mu_mask", style="filled", fillcolor="#60aef3", shape="oval"];
+	138 [label="Fail HLTTriggerSingleMuonTrigger", style="filled", fillcolor="#c4cfd4", shape="diamond"];
+	0 [label="Events", style="filled", fillcolor="#e8f8fc", shape="oval"];
+	26 [label="FillPar", style="filled", fillcolor="#9cbbe5", shape="box"];
+	27 [label="FillPar", style="filled", fillcolor="#9cbbe5", shape="box"];
+	0 -> 1;
+	113 -> 2;
+	110 -> 113;
+	111 -> 110;
+	112 -> 111;
+	82 -> 112;
+	83 -> 82;
+	84 -> 83;
+	85 -> 84;
+	86 -> 85;
+	87 -> 86;
+	88 -> 87;
+	89 -> 88;
+	90 -> 89;
+	91 -> 90;
+	92 -> 91;
+	93 -> 92;
+	94 -> 93;
+	95 -> 94;
+	96 -> 95;
+	97 -> 96;
+	98 -> 97;
+	99 -> 98;
+	100 -> 99;
+	101 -> 100;
+	102 -> 101;
+	103 -> 102;
+	104 -> 103;
+	105 -> 104;
+	106 -> 105;
+	107 -> 106;
+	108 -> 107;
+	109 -> 108;
+	78 -> 109;
+	79 -> 78;
+	80 -> 79;
+	81 -> 80;
+	77 -> 81;
+	0 -> 77;
+	113 -> 3;
+	113 -> 4;
+	113 -> 5;
+	113 -> 6;
+	113 -> 7;
+	113 -> 8;
+	113 -> 9;
+	113 -> 10;
+	113 -> 11;
+	113 -> 12;
+	113 -> 13;
+	113 -> 14;
+	113 -> 15;
+	113 -> 16;
+	113 -> 17;
+	113 -> 18;
+	113 -> 19;
+	132 -> 20;
+	110 -> 132;
+	132 -> 21;
+	132 -> 22;
+	132 -> 23;
+	132 -> 24;
+	143 -> 25;
+	144 -> 143;
+	145 -> 144;
+	146 -> 145;
+	139 -> 146;
+	140 -> 139;
+	141 -> 140;
+	142 -> 141;
+	138 -> 142;
+	0 -> 138;
+	143 -> 26;
+	143 -> 27;
+}
