@@ -1,0 +1,35 @@
+python /eos/user/m/migordon/SWAN_projects/TTBarProject/SkimScript.py 
+
+--input 'dbs:/TTToSemiLeptonic_mtop166p5_TuneCP5_13TeV-powheg-pythia8/RunIISummer20UL18NanoAODv9-106X_upgrade2018_realistic_v16_L1v1-v1/NANOAODSIM'
+
+--define 'auto leading_isolated_muon_mask = Muon_pt > 30 && abs(Muon_eta) < 2.4 && Muon_mediumId == true && Muon_pfIsoId >= 4;'
+--define 'auto leading_isolated_election_mask = Electron_pt > 30 && abs(Electron_eta) < 2.4 && Electron_cutBased == 4;'
+--define 'auto jet_mask = ROOT::VecOps::RVec<Int_t> jmask = (Jet_pt >= 30 && abs(Jet_eta) <= 2.5 && Jet_jetId >= 2); for(int i=0; i < LeadingIsolatedMuon_pt.size(); ++i){ROOT::VecOps::RVec<Float_t> dr; for(int j=0; j < jmask.size(); ++j){dr.push_back(ROOT::VecOps::DeltaR(Jet_eta.at(j), LeadingIsolatedMuon_eta.at(i), Jet_phi.at(j), LeadingIsolatedMuon_phi.at(i)));} jmask = jmask && dr >= 0.4; dr.clear(); return jmask;'
+--define 'auto jpsi_mu_candidate_mask = Muon_pt > 3 && abs(Muon_eta) <= 2.4 && Muon_mediumId == true && !(leading_isolated_muon_mask);'
+
+--define 'auto IsolatedMuon_pt = Muon_pt[leading_isolated_muon_mask]'
+--define 'auto IsolatedMuon_eta = Muon_eta[leading_isolated_muon_mask]'
+--define 'auto IsolatedMuon_phi = Muon_phi[leading_isolated_muon_mask]'
+--define 'auto IsolatedMuon_mass = Muon_mass[leading_isolated_muon_mask]'
+--define 'auto IsolatedMuon_charge = Muon_charge[leading_isolated_muon_mask]'
+
+--define 'auto METAfterMETCut = MET_pt'
+--define 'auto Num_Jets = Jet_pt[jet_mask].size()'
+
+--define 'auto JPsiMuonCandidate_pt = Muon_pt[jpsi_mu_candidate_mask]'
+--define 'auto JPsiMuonCandidate_eta = Muon_eta[jpsi_mu_candidate_mask]'
+--define 'auto JPsiMuonCandidate_phi = Muon_phi[jpsi_mu_candidate_mask]'
+--define 'auto JPsiMuonCandidate_mass = Muon_mass[jpsi_mu_candidate_mask]'
+--define 'auto JPsiMuonCandidate_charge = Muon_charge[jpsi_mu_candidate_mask]'
+
+--define 'auto JPsiMuonCorrectIM = float dr_cut = 2.5; low_jpsi_im_cut = 3.0; high_jpsi_im_cut = 3.2; three_body_im_cut = 20; RVec_i GoodMuonFlag = {}; int FirstMuonCharge = 0; int SecondMuonCharge = 0; float EtaIsolated = 0; float PhiIsolated = 0; float EtaJPsi = 0; float PhiJPsi = 0; float im = 0; float dr = 0; float im_three = 0; RVec_f pt {}; RVec_f eta {}; RVec_f phi {}; RVec_f mass {}; for(int k = 0; k < this->Isolated_Muon_pt.size(); k++){ for(int i = 0; i < this->JPsi_Muon_charge.size(); i++){ FirstMuonCharge = this->JPsi_Muon_charge[i]; for(int j = i+1; j < this->JPsi_Muon_charge.size(); j++){ SecondMuonCharge = this->JPsi_Muon_charge[j]; pt.push_back(this->JPsi_Muon_pt[i]); eta.push_back(this->JPsi_Muon_eta[i]); phi.push_back(this->JPsi_Muon_phi[i]); mass.push_back(this->JPsi_Muon_mass[i]); pt.push_back(this->JPsi_Muon_pt[j]); eta.push_back(this->JPsi_Muon_eta[j]); phi.push_back(this->JPsi_Muon_phi[j]); mass.push_back(this->JPsi_Muon_mass[j]); auto JPsiMuon1 = ROOT::Math::PtEtaPhiMVector (this->JPsi_Muon_pt[i], this->JPsi_Muon_eta[i], this->JPsi_Muon_phi[i], this->JPsi_Muon_mass[i]); auto JPsiMuon2 = ROOT::Math::PtEtaPhiMVector (this->JPsi_Muon_pt[j], this->JPsi_Muon_eta[j], this->JPsi_Muon_phi[j], this->JPsi_Muon_mass[j]); auto JPsi = JPsiMuon1 + JPsiMuon2; EtaIsolated = this->Isolated_Muon_eta[k]; PhiIsolated = this->Isolated_Muon_phi[k]; EtaJPsi = JPsi.Eta(); PhiJPsi = JPsi.Phi(); im = ROOT::VecOps::InvariantMass(pt, eta, phi, mass); dr = ROOT::VecOps::DeltaR(EtaIsolated, EtaJPsi, PhiIsolated, PhiJPsi); pt.push_back(this->Isolated_Muon_pt[k]); eta.push_back(this->Isolated_Muon_eta[k]); phi.push_back(this->Isolated_Muon_phi[k]); mass.push_back(this->Isolated_Muon_mass[k]); im_three = ROOT::VecOps::InvariantMass(pt, eta, phi, mass); if((FirstMuonCharge * SecondMuonCharge == -1) && (im > low_jpsi_im_cut) && (im < high_jpsi_im_cut) && (im_three > three_body_im_cut)){ GoodMuonFlag.push_back(1); } else{ GoodMuonFlag.push_back(0); } pt.clear(); eta.clear(); phi.clear(); mass.clear(); } } } return GoodMuonFlag;'
+--define 'auto jpsi_correct_im_mask = Sum(JPsiMuonCorrectIM) >= 1'
+
+--filter 'if(HLT_IsoMu24 == true || (HLT_Ele32_WPTight_Gsf == true && HLT_IsoMu24 == false) && Sum(leading_isolated_muon_mask) == 1 && METAfterMETCut >= 30 && Num_Jets >= 3 && Sum(jpsi_mu_candidate_mask) >= 2 && Sum(jpsi_correct_im_mask) >= 1) { return true;} return false;'
+
+--simultaneous 4 
+--nThreads 4 
+--write 
+--prefetch 
+--redir root://cms-xrd-global.cern.ch/ 
+--outdir /eos/user/m/migordon/SWAN_projects/JPsiSkims/TTToSemiLeptonic_mtop166p5_TuneCP5_13TeV-powheg-pythia8/RunIISummer20UL18NanoAODv2-106X_upgrade2018_realistic_v15_L1v1-v1
